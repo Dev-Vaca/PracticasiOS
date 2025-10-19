@@ -11,7 +11,7 @@ import SwiftUI
 struct CursoIOSApp: App {
     var body: some Scene {
         WindowGroup {
-            Exercise1()
+            ContentView()
         }
     }
 }
