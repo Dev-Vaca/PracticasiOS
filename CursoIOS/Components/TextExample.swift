@@ -9,7 +9,18 @@ import SwiftUI
 
 struct TextExample: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Hola").font(.headline)
+            Text("Custom")
+                .font(.system(size: 40, weight: .light, design: .monospaced))
+                .italic()
+                .underline()
+                .foregroundColor(.red)
+            Text("VACA VACA VACA VACA")
+                .frame(width: 150)
+                .lineLimit(3)
+                .lineSpacing(10)
+        }
     }
 }
 

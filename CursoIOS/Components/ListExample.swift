@@ -9,8 +9,51 @@ import SwiftUI
 
 struct ListExample: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            List {
+                ForEach(pokemons, id:\.name) {
+                    pokemon in Text(pokemon.name)
+                }
+            }
+            
+            List(digimons) { digimon in Text(digimon.name) }
+            
+            List {
+                    Section(header: Text("Pokemones")) {
+                            ForEach(pokemons, id:\.name) {
+                                pokemon in Text(pokemon.name)
+                            }
+                        
+                    }
+                    Section(header: Text("Digimones")) {
+                        ForEach(digimons) { digimon in Text(digimon.name) }
+                    }
+            }.listStyle(.sidebar)
+        }
     }
+}
+
+var pokemons = [
+    Pokemon(name: "Pikachu"),
+    Pokemon(name: "Charizard"),
+    Pokemon(name: "Squirtle"),
+    Pokemon(name: "Bulbasaur"),
+]
+
+var digimons = [
+    Digimon(name: "Pablomon"),
+    Digimon(name: "Cacamon"),
+    Digimon(name: "Wendymon"),
+    Digimon(name: "Tadeomon"),
+]
+
+struct Pokemon {
+    let name: String
+}
+
+struct Digimon: Identifiable {
+    var id = UUID()
+    let name: String
 }
 
 #Preview {

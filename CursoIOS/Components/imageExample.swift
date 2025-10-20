@@ -6,10 +6,24 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct imageExample: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        HStack
+        {
+            WebImage(url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"))
+                .resizable()
+                .indicator(.activity)
+                .scaledToFill()
+                .frame(height: 150)
+            WebImage(url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"))
+                .resizable()
+                .indicator(.activity)
+                .scaledToFill()
+                .frame(height: 10)
+        }
     }
 }
 
