@@ -8,7 +8,6 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-
 struct SuperheroSearcher: View {
     
     @State var superheroName: String = ""

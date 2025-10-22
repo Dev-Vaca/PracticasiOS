@@ -66,6 +66,20 @@ struct MenuView: View {
                     }
                     .padding(.vertical, 8)
                 }
+                
+                NavigationLink(destination: FavPlaces()) {
+                    HStack(spacing: 16) {
+                        Image(systemName: "map.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(.green)
+                        
+                        Text("Mapa")
+                            .font(.system(size: 17, weight: .regular))
+                    }
+                    .padding(.vertical, 8)
+                }
             }
             .navigationTitle("Menú")
             .navigationBarTitleDisplayMode(.large)
